@@ -1,0 +1,71 @@
+
+/* Mitra Fintech White + Bottom Nav + Modals */
+:root{
+  --bg:#f7faff; --text:#0b1b2b; --muted:#637187;
+  --brand:#3461ff; --accent:#00c2a8;
+  --glass:rgba(255,255,255,0.7); --border:rgba(11,27,43,0.08);
+  --shadow1:0 10px 30px rgba(52,97,255,0.15);
+  --shadow2:0 24px 70px rgba(124,77,255,0.12);
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;color:var(--text);background:var(--bg)}
+a{text-decoration:none;color:inherit}
+.bg{position:fixed;inset:0;pointer-events:none}
+.particles{background:
+  radial-gradient(800px 500px at 10% 15%, rgba(52,97,255,0.08), transparent),
+  radial-gradient(700px 480px at 90% 20%, rgba(124,77,255,0.08), transparent),
+  radial-gradient(900px 600px at 40% 85%, rgba(0,194,168,0.08), transparent);filter:blur(.3px)}
+.glass{backdrop-filter:blur(8px); background:var(--glass); border:1px solid var(--border); border-radius:20px; box-shadow:var(--shadow1),var(--shadow2)}
+
+.header{position:sticky;top:0;margin:12px; padding:12px 16px; display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800}
+.dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--brand));box-shadow:0 0 0 6px rgba(52,97,255,0.12)}
+.brand .mitra{color:var(--brand)}
+.container{max-width:1080px;margin:22px auto 90px;padding:0 16px}
+
+button{background:linear-gradient(135deg,var(--brand),#7c4dff);border:none;border-radius:12px;color:#fff;
+  padding:10px 14px;cursor:pointer;box-shadow:var(--shadow1);transition:transform .15s ease, box-shadow .2s ease}
+button.secondary{background:linear-gradient(135deg,var(--accent),#4be0d1);color:#063d36}
+button.ghost{background:transparent;border:1px solid var(--border);color:var(--text)}
+button:hover{transform:translateY(-2px); box-shadow:0 16px 40px rgba(52,97,255,0.18)}
+
+footer{text-align:center;color:var(--muted);padding:24px}
+
+/* Feed */
+.feed .composer textarea{width:100%;min-height:96px;padding:10px;border:1px solid var(--border);border-radius:12px;background:white;margin:10px 0}
+.who{display:flex;align-items:center;gap:10px}
+.avatar{width:44px;height:44px;border-radius:50%;background:#dce6ff}
+.meta{color:var(--muted)}
+.badge{padding:3px 8px;border-radius:999px;background:rgba(52,97,255,0.12);font-weight:700;font-size:12px}
+.card{padding:18px}
+.post{margin:14px 0}
+.post .text{margin:8px 0}
+.embed{margin:10px 0;padding:12px;border:1px solid var(--border);border-radius:14px;background:white}
+.actions{display:flex;gap:10px;flex-wrap:wrap}
+
+/* Bottom Nav */
+.bottomnav{position:fixed;bottom:12px;left:0;right:0;display:flex;justify-content:center;pointer-events:none}
+.bottomnav .wrap{pointer-events:auto;display:flex;gap:12px;padding:10px;border-radius:18px;background:rgba(255,255,255,0.85);
+  border:1px solid var(--border);backdrop-filter:blur(10px);box-shadow:0 8px 30px rgba(52,97,255,0.15)}
+.navbtn{display:flex;flex-direction:column;align-items:center;gap:4px;min-width:70px;padding:8px 10px;border-radius:14px;color:var(--muted)}
+.navbtn.active,.navbtn:hover{background:rgba(52,97,255,0.10);color:var(--text)}
+.navbtn .icon{font-size:20px}
+.navbtn .label{font-size:12px;font-weight:700;letter-spacing:.3px}
+
+/* Modals */
+.modal{position:fixed;inset:0;background:rgba(9,20,35,0.35);display:none;align-items:center;justify-content:center;padding:16px;z-index:50}
+.modal.show{display:flex}
+.modal .sheet{width:100%;max-width:520px;background:#fff;border-radius:18px;border:1px solid var(--border);box-shadow:var(--shadow2);padding:18px}
+.modal .row{display:flex;justify-content:flex-end;gap:8px;margin-top:14px}
+.modal input, .modal textarea{width:100%;padding:10px;border:1px solid var(--border);border-radius:12px;background:#fff}
+
+/* Gauge & drivers (for profile/improve pages kept consistent) */
+.gaugeWrap{position:relative;display:grid;place-items:center;padding:12px}
+.gauge{width:100%;max-width:340px}
+.score{position:absolute;bottom:38px;font-size:46px;font-weight:800}
+.grade{position:absolute;bottom:14px;color:var(--muted);font-weight:700}
+.drivers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.controls label{display:block;margin:10px 0 6px}
+.controls input[type=range]{width:100%}
+.offers{margin:0;padding-left:18px}
+.tip{color:var(--muted)}

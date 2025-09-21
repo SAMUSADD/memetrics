@@ -1,0 +1,65 @@
+
+<!DOCTYPE html><html lang='en'><head>
+<meta charset='utf-8'/><meta name='viewport' content='width=device-width, initial-scale=1.0'/>
+<title>Mitra • Profile (DVI History)</title>
+<link rel='stylesheet' href='style.css'/>
+<link rel='stylesheet' href='style_profile.css'/>
+<script defer src='shared.js'></script>
+<script defer src='config.js'></script>
+<script defer src='profile.js'></script>
+</head><body>
+<div class="bg particles"></div>
+<header class="header glass">
+  <div class="brand"><div class="dot"></div><div>MeMetrics</div><div>•</div><div class="mitra">Mitra</div></div>
+  <div style="color:var(--muted)">Profile</div>
+</header>
+
+<main class="container">
+  <section class="card glass">
+    <div class="who">
+      <div class="avatar"></div>
+      <div>
+        <div class="name" id="pName">You</div>
+        <div class="meta" id="pMeta">Student • Field</div>
+      </div>
+    </div>
+    <div class="profile-editor" style="margin-top:10px">
+      <details>
+        <summary>Edit profile</summary>
+        <input id="nameInput" placeholder="Your name"/>
+        <input id="fieldInput" placeholder="Field of study (e.g., Software)"/>
+        <textarea id="bioInput" placeholder="Short bio"></textarea>
+        <button id="saveProfile" class="secondary">Save</button>
+      </details>
+    </div>
+  </section>
+
+  <section class="grid">
+    <div class="card glass">
+      <h2>DVI History</h2>
+      <div class="chart-wrap">
+        <canvas id="dviChart" class="chart"></canvas>
+      </div>
+      <div class="tip">This chart updates every time you pull your DVI in the Feed.</div>
+    </div>
+
+    <div class="card glass">
+      <h2>Achievements</h2>
+      <div class="badges" id="badges"></div>
+      <p class="tip">Badges unlock from your DVI milestones.</p>
+    </div>
+  </section>
+</main>
+
+<div class="bottomnav">
+  <div class="wrap">
+    <a class="navbtn" href="index.html"><div class="icon">💬</div><div class="label">Feed</div></a>
+    <a class="navbtn active" href="profile.html"><div class="icon">👤</div><div class="label">Profile</div></a>
+    <a class="navbtn" href="opportunities.html"><div class="icon">💼</div><div class="label">Opportunities</div></a>
+    <a class="navbtn" href="improve.html"><div class="icon">⚡</div><div class="label">Improve</div></a>
+  </div>
+</div>
+
+<footer>© <span id="year"></span> MeMetrics • Powered by Mitra</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body></html>

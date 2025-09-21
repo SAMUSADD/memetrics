@@ -1,0 +1,7 @@
+
+/* Extra styles for Profile chart & badges */
+.chart-wrap{padding:16px}
+.chart{width:100%; height:220px; border:1px solid var(--border); border-radius:12px; background:#fff}
+.badges{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
+.badge-chip{padding:6px 10px; border-radius:999px; background:rgba(52,97,255,0.10); border:1px solid var(--border); font-weight:700; font-size:12px}
+.profile-editor input, .profile-editor textarea{width:100%; padding:10px; border:1px solid var(--border); border-radius:12px; background:#fff; margin:6px 0}

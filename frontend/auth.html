@@ -1,0 +1,45 @@
+
+<!DOCTYPE html><html lang='en'><head>
+<meta charset='utf-8'/><meta name='viewport' content='width=device-width, initial-scale=1.0'/>
+<title>Mitra • Sign in</title>
+<link rel='stylesheet' href='style.css'/>
+<script defer src='config.js'></script>
+<script defer src='shared.js'></script>
+<script defer src='auth.js'></script>
+</head><body>
+<div class="bg particles"></div>
+<header class="header glass">
+  <div class="brand"><div class="dot"></div><div>MeMetrics</div><div>•</div><div class="mitra">Mitra</div></div>
+  <div style="color:var(--muted)">Sign in</div>
+</header>
+<main class="container">
+  <section class="card glass">
+    <h2>Welcome back</h2>
+    <div class="grid">
+      <div>
+        <h3>Login</h3>
+        <input id="loginEmail" placeholder="Email" style="width:100%;padding:10px;border:1px solid var(--border);border-radius:12px;background:#fff;margin:6px 0">
+        <input id="loginPw" type="password" placeholder="Password" style="width:100%;padding:10px;border:1px solid var(--border);border-radius:12px;background:#fff;margin:6px 0">
+        <button id="loginBtn">Sign in</button>
+      </div>
+      <div>
+        <h3>Register</h3>
+        <input id="regName" placeholder="Full name" style="width:100%;padding:10px;border:1px solid var(--border);border-radius:12px;background:#fff;margin:6px 0">
+        <input id="regEmail" placeholder="Email" style="width:100%;padding:10px;border:1px solid var(--border);border-radius:12px;background:#fff;margin:6px 0">
+        <input id="regPw" type="password" placeholder="Password" style="width:100%;padding:10px;border:1px solid var(--border);border-radius:12px;background:#fff;margin:6px 0">
+        <button class="secondary" id="regBtn">Create account</button>
+      </div>
+    </div>
+  </section>
+</main>
+<div class="bottomnav">
+  <div class="wrap">
+    <a class="navbtn" href="index.html"><div class="icon">💬</div><div class="label">Feed</div></a>
+    <a class="navbtn" href="profile.html"><div class="icon">👤</div><div class="label">Profile</div></a>
+    <a class="navbtn" href="opportunities.html"><div class="icon">💼</div><div class="label">Opportunities</div></a>
+    <a class="navbtn" href="improve.html"><div class="icon">⚡</div><div class="label">Improve</div></a>
+  </div>
+</div>
+<footer>© <span id="year"></span> MeMetrics • Powered by Mitra</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body></html>

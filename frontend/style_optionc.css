@@ -1,0 +1,9 @@
+
+/* Option C extras: filters, chips, sliders */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.chip{padding:6px 10px;border:1px solid var(--border);border-radius:999px;background:#fff;cursor:pointer}
+.chip.active{background:rgba(52,97,255,0.10)}
+.op-card h3{margin:0 0 6px 0}
+.op-card .meta{color:var(--muted);font-size:12px;margin-bottom:8px}
+.slider-row{display:grid;grid-template-columns:1fr 80px;align-items:center;gap:10px;margin:8px 0}
+.spark{width:100%;height:40px;border:1px solid var(--border);border-radius:8px;background:#fff}

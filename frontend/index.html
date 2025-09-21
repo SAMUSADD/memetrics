@@ -1,0 +1,67 @@
+
+<!DOCTYPE html><html lang='en'><head>
+<meta charset='utf-8'/><meta name='viewport' content='width=device-width, initial-scale=1.0'/>
+<title>Mitra • Feed (Enhanced)</title>
+<link rel='stylesheet' href='style.css'/>
+<script defer src='shared.js'></script>
+<script defer src='config.js'></script>
+<script defer src='feed.js'></script>
+</head><body>
+<div class="bg particles"></div>
+<header class="header glass">
+  <div class="brand"><div class="dot"></div><div>MeMetrics</div><div>•</div><div class="mitra">Mitra</div></div>
+  <div style="color:var(--muted)">Feed</div>
+</header>
+
+<main class="container feed">
+  <section class="composer card glass">
+    <div class="who">
+      <div class="avatar"></div>
+      <div><div class="name">You</div><div class="meta">DVI <span id="youDvi">—</span> • <span class="badge">—</span></div></div>
+    </div>
+    <textarea id="composerText" placeholder="Share a milestone, ask for help, or showcase a project…"></textarea>
+    <div class="row"><button id="pullDviBtn" class="secondary">Pull my DVI</button> <button id="postBtn">Post</button></div>
+  </section>
+
+  <section id="feedList"></section>
+</main>
+
+<!-- Comment Modal -->
+<div class="modal" id="commentModal" onclick="if(event.target===this) closeModal('commentModal')">
+  <div class="sheet">
+    <h3>Comment</h3>
+    <textarea id="commentText" placeholder="Write something supportive…"></textarea>
+    <div class="row">
+      <button class="ghost" onclick="closeModal('commentModal')">Cancel</button>
+      <button id="submitComment">Post</button>
+    </div>
+  </div>
+</div>
+
+<!-- Sponsor Modal -->
+<div class="modal" id="sponsorModal" onclick="if(event.target===this) closeModal('sponsorModal')">
+  <div class="sheet">
+    <h3>Sponsor this student</h3>
+    <p class="tip">Pledge amount (EUR)</p>
+    <input id="pledgeAmount" type="number" min="5" value="25"/>
+    <p class="tip">Note (optional)</p>
+    <textarea id="pledgeNote" placeholder="Message to the student…"></textarea>
+    <div class="row">
+      <button class="ghost" onclick="closeModal('sponsorModal')">Cancel</button>
+      <button id="submitPledge">Pledge</button>
+    </div>
+  </div>
+</div>
+
+<div class="bottomnav">
+  <div class="wrap">
+    <a class="navbtn active" href="index.html"><div class="icon">💬</div><div class="label">Feed</div></a>
+    <a class="navbtn" href="profile.html"><div class="icon">👤</div><div class="label">Profile</div></a>
+    <a class="navbtn" href="opportunities.html"><div class="icon">💼</div><div class="label">Opportunities</div></a>
+    <a class="navbtn" href="improve.html"><div class="icon">⚡</div><div class="label">Improve</div></a>
+  </div>
+</div>
+
+<footer>© <span id="year"></span> MeMetrics • Powered by Mitra</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body></html>

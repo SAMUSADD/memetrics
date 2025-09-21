@@ -1,0 +1,66 @@
+
+<!DOCTYPE html><html lang='en'><head>
+<meta charset='utf-8'/><meta name='viewport' content='width=device-width, initial-scale=1.0'/>
+<title>Mitra • Improve (Enhanced)</title>
+<link rel='stylesheet' href='style.css'/>
+<link rel='stylesheet' href='style_optionc.css'/>
+<script defer src='shared.js'></script>
+<script defer src='config.js'></script>
+<script defer src='improve.js'></script>
+</head><body>
+<div class="bg particles"></div>
+<header class="header glass">
+  <div class="brand"><div class="dot"></div><div>MeMetrics</div><div>•</div><div class="mitra">Mitra</div></div>
+  <div style="color:var(--muted)">Improve</div>
+</header>
+
+<main class="container">
+  <section class="card glass">
+    <h2>What‑if Simulator</h2>
+    <div class="slider-row">Skills <input type="range" id="skills" min="0" max="1" step="0.01" value="0.6"><span id="skillsV">0.60</span></div>
+    <div class="slider-row">Learning <input type="range" id="learning" min="0" max="1" step="0.01" value="0.6"><span id="learningV">0.60</span></div>
+    <div class="slider-row">Certifications <input type="number" id="certs" min="0" value="1"><span>&nbsp;</span></div>
+    <div class="slider-row">Projects <input type="range" id="projects" min="0" max="1" step="0.01" value="0.55"><span id="projectsV">0.55</span></div>
+    <div class="slider-row">Finance <input type="range" id="finance" min="0" max="1" step="0.01" value="0.5"><span id="financeV">0.50</span></div>
+    <div class="slider-row">Resilience <input type="range" id="resilience" min="0" max="1" step="0.01" value="0.62"><span id="resilienceV">0.62</span></div>
+    <div style="margin-top:10px"><button id="simulate">Ask Mitra</button></div>
+
+    <div class="gaugeWrap">
+      <svg viewBox="0 0 120 70" class="gauge">
+        <defs><linearGradient id="grad" x1="0" x2="1"><stop offset="0%" stop-color="#00C2A8"/><stop offset="50%" stop-color="#3461FF"/><stop offset="100%" stop-color="#7C4DFF"/></linearGradient></defs>
+        <path d="M10 60 A50 50 0 0 1 110 60" stroke="url(#grad)" stroke-width="12" fill="none" opacity="0.3"/>
+        <path id="needle" d="M10 60 A50 50 0 0 1 110 60" stroke="url(#grad)" stroke-width="12" fill="none" stroke-dasharray="157" stroke-dashoffset="157"/>
+      </svg>
+      <div class="score" id="dviScore">—</div>
+      <div class="grade" id="dviGrade">—</div>
+    </div>
+
+    <div class="drivers" id="drivers"></div>
+    <div style="margin-top:10px">
+      <div class="tip">Your potential path</div>
+      <canvas id="spark" class="spark"></canvas>
+    </div>
+  </section>
+
+  <section class="card glass">
+    <h2>Mitra Tips</h2>
+    <ul class="offers" id="tipsList">
+      <li>Complete 1 certification to target <b>+25 DVI</b>.</li>
+      <li>Publish a project with real users (+portfolio strength).</li>
+      <li>Consistency beats spikes — learn a little daily.</li>
+    </ul>
+  </section>
+</main>
+
+<div class="bottomnav">
+  <div class="wrap">
+    <a class="navbtn" href="index.html"><div class="icon">💬</div><div class="label">Feed</div></a>
+    <a class="navbtn" href="profile.html"><div class="icon">👤</div><div class="label">Profile</div></a>
+    <a class="navbtn" href="opportunities.html"><div class="icon">💼</div><div class="label">Opportunities</div></a>
+    <a class="navbtn active" href="improve.html"><div class="icon">⚡</div><div class="label">Improve</div></a>
+  </div>
+</div>
+
+<footer>© <span id="year"></span> MeMetrics • Powered by Mitra</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body></html>

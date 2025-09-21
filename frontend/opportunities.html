@@ -1,0 +1,53 @@
+
+<!DOCTYPE html><html lang='en'><head>
+<meta charset='utf-8'/><meta name='viewport' content='width=device-width, initial-scale=1.0'/>
+<title>Mitra • Opportunities (Enhanced)</title>
+<link rel='stylesheet' href='style.css'/>
+<link rel='stylesheet' href='style_optionc.css'/>
+<script defer src='shared.js'></script>
+<script defer src='config.js'></script>
+<script defer src='opportunities.js'></script>
+</head><body>
+<div class="bg particles"></div>
+<header class="header glass">
+  <div class="brand"><div class="dot"></div><div>MeMetrics</div><div>•</div><div class="mitra">Mitra</div></div>
+  <div style="color:var(--muted)">Opportunities</div>
+</header>
+
+<main class="container">
+  <div class="filters">
+    <span class="chip active" data-type="all">All</span>
+    <span class="chip" data-type="scholarship">Scholarships</span>
+    <span class="chip" data-type="loan">Loans</span>
+    <span class="chip" data-type="job">Jobs</span>
+    <span class="chip" data-type="bootcamp">Bootcamps</span>
+  </div>
+
+  <section id="opList" class="grid"></section>
+</main>
+
+<!-- Details Modal -->
+<div class="modal" id="opModal" onclick="if(event.target===this) closeModal('opModal')">
+  <div class="sheet">
+    <h3 id="opTitle">Opportunity</h3>
+    <div class="meta" id="opMeta"></div>
+    <p id="opDesc" style="margin-top:8px">—</p>
+    <div class="row">
+      <button class="ghost" onclick="closeModal('opModal')">Close</button>
+      <button id="opAction">Apply</button>
+    </div>
+  </div>
+</div>
+
+<div class="bottomnav">
+  <div class="wrap">
+    <a class="navbtn" href="index.html"><div class="icon">💬</div><div class="label">Feed</div></a>
+    <a class="navbtn" href="profile.html"><div class="icon">👤</div><div class="label">Profile</div></a>
+    <a class="navbtn active" href="opportunities.html"><div class="icon">💼</div><div class="label">Opportunities</div></a>
+    <a class="navbtn" href="improve.html"><div class="icon">⚡</div><div class="label">Improve</div></a>
+  </div>
+</div>
+
+<footer>© <span id="year"></span> MeMetrics • Powered by Mitra</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body></html>
