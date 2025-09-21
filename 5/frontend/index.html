@@ -1,0 +1,72 @@
+
+<!DOCTYPE html><html lang='en'><head>
+<meta charset='utf-8'/><meta name='viewport' content='width=device-width, initial-scale=1.0'/>
+<title>Mitra • Feed</title>
+<link rel='stylesheet' href='style.css'/>
+<script defer src='config.js'></script>
+</head><body>
+<div class="bg particles"></div>
+<header class="header glass">
+  <div class="brand"><div class="dot"></div><div>MeMetrics</div><div>•</div><div class="mitra">Mitra</div></div>
+  <div style="color:var(--muted)">Social • Fintech</div>
+</header>
+
+<main class="container feed">
+  <section class="composer card glass">
+    <div class="who">
+      <div class="avatar"></div>
+      <div><div class="name">You</div><div class="meta">DVI <span id="youDvi">—</span> • <span class="badge">—</span></div></div>
+    </div>
+    <textarea id="composerText" placeholder="Share a milestone, ask for help, or showcase a project…"></textarea>
+    <div class="row"><button id="pullDviBtn" class="secondary">Pull my DVI</button> <button id="postBtn">Post</button></div>
+  </section>
+
+  <section id="feedList"></section>
+</main>
+
+<div class="bottomnav">
+  <div class="wrap">
+    <a class="navbtn active" href="index.html"><div class="icon">💬</div><div class="label">Feed</div></a>
+    <a class="navbtn" href="profile.html"><div class="icon">👤</div><div class="label">Profile</div></a>
+    <a class="navbtn" href="opportunities.html"><div class="icon">💼</div><div class="label">Opportunities</div></a>
+    <a class="navbtn" href="improve.html"><div class="icon">⚡</div><div class="label">Improve</div></a>
+  </div>
+</div>
+
+<footer>© <span id="year"></span> MeMetrics • Powered by Mitra</footer>
+
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+const API = window.MEMETRICS_API;
+const youDviEl = document.getElementById('youDvi');
+const posts=[
+  {name:'Emily Chen', dvi:712, grade:'Good', text:'Just completed AWS Certification! 🎉 Eligible for a micro-loan via MeMetrics.', embed:{title:'AWS Certified', body:'€2,000 microloan available'}},
+  {name:'Fatima Noor', dvi:768, grade:'Excellent', text:'Bootcamp done & interview at Revolut 🙏 Thank you sponsors!', embed:{title:'Milestone', body:'Interview Fast-Track: Revolut • Partner'}}
+];
+const feed = document.getElementById('feedList');
+function render(){
+  feed.innerHTML = posts.map(p=>`
+    <article class="post card glass">
+      <div class="who"><div class="avatar"></div><div><div class="name">${p.name}</div><div class="meta">DVI ${p.dvi} • <span class="badge">${p.grade}</span></div></div></div>
+      <p class="text">${p.text}</p>
+      ${p.embed?`<div class="embed"><strong>${p.embed.title}</strong><div>${p.embed.body}</div></div>`:''}
+      <div class="actions"><button class="ghost">💙 Like</button><button class="ghost">💬 Comment</button><button class="ghost">💸 Sponsor</button><button class="ghost">↗ Share</button></div>
+    </article>
+  `).join('');
+}
+render();
+document.getElementById('postBtn').onclick=()=>{
+  const t=document.getElementById('composerText').value.trim(); if(!t) return;
+  const dvi=parseInt(youDviEl.textContent||'700',10)||700;
+  const grade = dvi>=760?'Excellent': dvi>=680?'Good': dvi>=600?'Fair':'Developing';
+  posts.unshift({name:'You', dvi, grade, text:t}); document.getElementById('composerText').value=''; render();
+};
+document.getElementById('pullDviBtn').onclick=async()=>{
+  try{
+    const payload={skills_index:0.62,learning_pace:0.61,certifications:1,project_score:0.55,financial_behavior:0.5,resilience_score:0.62};
+    const res=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+    const data=await res.json(); youDviEl.textContent=data.dvi; document.querySelector('.composer .badge').textContent=data.grade;
+  }catch(e){ alert('Could not reach API. Is backend running?'); }
+};
+</script>
+</body></html>
